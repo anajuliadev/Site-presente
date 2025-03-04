@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
     <link rel="icon" href="./assets/present.png">
     <title>Feliz Aniversário</title>
 </head>
 <body>
     <main>
-        <div class="press-here">
+        <div class="press-here" onclick="start()">
             <p>Press the Shooky</p>
-            <a href="">
+            <a href="#message">
                 <img src="./assets/shooky.jpg" alt=""> 
             </a> 
         </div>
-
-        <div class="message">
-            <embed src="./assets/happy-btd.mp3" loop="true" autostart="true" width="2" height="0">
+        
+        <audio id="happyBtd" src="./assets/happy-btd.mp3"></audio>
+        <div id="message">
             <p>Happy Birthday <br> To You</p>
             <div class="cake">
                 <img src="./assets/cake.gif" alt="">
             </div>
-            <a href="#music" class="seta">
+            <a href="#music" onclick="music()" class="seta">
                 <img src="./assets/setinha.png" alt="">
             </a>
         </div>
 
         <div id="music">
-            <div class="music-player">
+            <div class="music-play">
                 <div class="info-music">
                     <img src="./assets/capa.png" alt="">
                     <p class="song">Friends</p>
@@ -36,21 +37,51 @@
                 </div>
                 
                 <div class="time-music">
-                    <p>00:00</p>
+                    <p id="current-time">00:00</p>
                     <p>/</p>
-                    <p>00:00</p>
+                    <p id="duration">00:00</p>
                 </div>
+                <audio id="player" src="/assets/Friends.mp3"></audio>
                 <div class="barra-music">
-                    <div class="barra linha-tempo"></div>
-                    <div class="barra linha-percorrida"></div>
-                    <img src="./assets/bolinha.png" alt="">
+                    <div id="linha-tempo" class="barra">
+                        <img class="bolinha" src="./assets/bolinha.png" alt="">
+
+                    </div>
+                    <div id="linha-percorrida" class="barra"></div>
                 </div>
-                <img class="player" src="./assets/player.svg" alt="">
+                <img id="btn-playPause" class="play" src="./assets/play.svg" alt="">
             </div>
             <div class="date">
                 <p class="niver">05.05</p>
                 <p class="aniversariante">Julia's day</p>
             </div>
+            <div class="acompanhe-letra">
+                <p>Arraste para baixo para acompanhar a letra</p>
+            </div>
+        </div>
+        <div id="lyric">
+            <img src="./assets/polaroid.png" alt="">
+            <p class="lyric-music">
+                뭔가 이상했었던 아이
+                <br>
+                Uma garota um tanto estranha 
+                <br>
+                난 달에서 넌 별에서
+                <br>
+                Eu da Lua, você das estrelas
+                <br>
+                우리 대화는 숙제 같았지
+                <br>
+                Nossas conversas eram como lição de casa
+                <br>
+                하루 동안 가장 친한 친구,
+                <br>
+                Melhores amigas em um dia,
+                <br>
+                영원히 가장 친한 친구
+                <br>
+                melhores amigas pra sempre
+            </p>
         </div>
     </main>
 </body>
