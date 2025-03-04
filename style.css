@@ -11,6 +11,30 @@ body{
 main{
     height: 100vh;
     
+    .press-here{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        p{
+            text-align: center;
+            font-size: 37px;
+            font-weight: 750;
+        }
+        img{
+            width: 250px;
+            background-color: rgb(38, 255, 0);
+            border: 6px dashed rgb(251, 0, 255);
+            border-radius: 100%;
+            padding: 15px;
+
+            animation: rotate 5s ease-in-out infinite alternate forwards;
+        }
+    }
+    
     .message{
         background-image: url(./assets/estrelas.gif);
         width: 100%;
@@ -19,27 +43,27 @@ main{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        
         p{
             font-size: 40px;
             text-align: center;
         }
     }
-
+    
     #music{
         height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
+        
         .music-player{
             width: 200px;
             display: flex;
             flex-direction: column;
             align-items: center;
             border: 5px solid #737373;
-            border-radius: 16px;
+            border-radius: 16px;       
             padding: 12px;
             gap: 8px;
 
@@ -96,5 +120,19 @@ main{
                 font-size: 25px;
             }
         }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+        scale: 50%;
+    }
+
+    to {
+        transform: rotate(359deg);
+        scale: 130%;
+        background-color: rgb(161, 62, 219);
+        border: 6px dashed rgb(255, 0, 0);
     }
 }
